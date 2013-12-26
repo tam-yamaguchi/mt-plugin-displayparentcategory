@@ -3,7 +3,7 @@ use strict;
 use MT;
 use MT::Plugin;
 
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 
 use base qw( MT::Plugin );
 
@@ -31,6 +31,7 @@ sub init_registry {
     $plugin->registry( {
         callbacks => {
             'MT::App::CMS::pre_run' => '$displayparentcategory::DisplayParentCategory::Callbacks::pre_run',
+            'MT::App::CMS::template_source.entry_table' => '$displayparentcategory::DisplayParentCategory::Callbacks::add_field',
         },
    } );
 }
